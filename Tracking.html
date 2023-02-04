@@ -1,0 +1,162 @@
+<html>
+    <head>
+        <title>Tracking</title>
+        <style>
+            h1{
+                
+                font-size: 50px;
+                font-family: 'Times New Roman', Times, serif;
+                margin: 0px 550px;
+                padding: 100px;
+                color: rgba(11, 51, 251, 0.875);
+            }
+            #on{
+                
+                font-size: 20px;
+                font-family: 'Times New Roman', Times, serif;
+                color: white;
+                padding: 50px;
+                margin: 0px -118px;
+                
+            }
+            #up{
+
+                font-size: 18px;
+                font-family: 'Times New Roman', Times, serif;
+                color: white;
+                padding: 38px;
+                margin: 0px -75px;
+            }
+            #start{
+
+                font-size: 18px;
+                font-family: 'Times New Roman', Times, serif;
+                color: white;
+                padding: 38px;
+                margin: 0px -95px;
+            }
+            #com{
+
+                font-size: 18px;
+                font-family: 'Times New Roman', Times, serif;
+                color: white;
+                padding: 38px;
+                margin: 0px -95px;
+            }
+            .appli{
+                position: fixed;
+                background: blue;
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                margin: 0px 200px;
+            }
+            .doc{
+                position: fixed;
+                background: blue;
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                margin: 0px 500px;
+            }
+            .veri{
+                
+                position: fixed;
+                background: blue;
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                margin: 0px 800px;
+            }
+            .comp{
+                
+                position: fixed;
+                background: blue;
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                margin: 0px 1100px;
+            }
+            .img{
+                width: 100%;
+                position: relative;
+            }
+            /* .img img{
+                display: block;
+                position: absolute;
+                width: 200%;
+                left: 5rem;
+
+            } */
+            .img1{
+                display: block;
+                position: absolute;
+                width: 165%;
+                left: 5.6rem;
+                top: 2rem;
+            }
+            .img2{
+                display: block;
+                position: absolute;
+                width: 210%;
+                left: 4.5rem;
+                top: 2rem;
+            }
+            .img3{
+                display: block;
+                position: absolute;
+                width: 168%;
+                left: 5.6rem;
+                top: 2rem;
+            }
+            .circle{
+                display: flex;
+            }
+            
+           
+        </style>
+        <body>
+             <h1>Tracking</h1>
+             <div class="appli circle"> 
+                <pre id="on">
+                      Online 
+                    Application
+                </pre>
+                <div class="img"><img class="img1" src="https://cdn.pixabay.com/photo/2014/04/03/10/29/arrow-310633__340.png" alt="arrow" ></div>
+             </div>
+             <div class="doc circle">
+                <pre id="up">
+                Document 
+                and Photo 
+                Uploading
+                </pre>
+                <div class="img"><img class="img2" src="https://cdn.pixabay.com/photo/2014/04/03/10/29/arrow-310633__340.png" alt="arrow" ></div>
+             </div>
+
+             <div class="veri circle">
+                <pre id="start">
+                    Verification
+                      Process
+                      Started
+                </pre>
+                <div class="img"><img class="img3" src="https://cdn.pixabay.com/photo/2014/04/03/10/29/arrow-310633__340.png" alt="arrow" ></div>
+             </div>
+
+             <div class="comp circle">
+                <pre id="com">
+                    Verification
+                      Process
+                     Completed
+                </pre>
+             </div>
+        </body>
+        <script>
+            const circle = document.querySelectorAll(".circle");
+            circle.forEach((e)=>{
+                e.addEventListener("click",()=>{
+                    alert("clicked")
+                })
+            })
+        </script>
+    </head>
+</html>

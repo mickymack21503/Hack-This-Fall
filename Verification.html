@@ -1,0 +1,185 @@
+<html>
+
+<head>
+  <title>Verification</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <h1 style="color:#0E9AFF"; align="center" class="title"> Apply For Verification</h1> -->
+  <container class="title">Apply For Verification</container>
+  <container class="personal">Personal Details</container>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+    input {
+      width: 50%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      background: transparent;
+    }
+
+    input:focus::placeholder {
+      color: transparent;
+    }
+
+    #btn {
+      background-color: rgba(15, 15, 225, 0.858);
+      color: white;
+      font-size: xx-large;
+      border-radius: 15px 15px;
+    }
+
+    .button {
+      padding: .8rem 1rem;
+      background-color: rgba(15, 15, 225, 0.858);
+      color: white;
+      font-size: xx-large;
+      border-radius: 15px 15px;
+    }
+
+    .button:hover {
+      color: rgba(13, 13, 104, 0.858);
+      background-color: gray;
+    }
+
+    #a {
+      color: white;
+    }
+
+    .title {
+      position: absolute;
+      width: 808px;
+      height: 90px;
+      left: 520px;
+      top: 13px;
+      font-family: 'Ubuntu';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 74px;
+      color: #0E9AFF;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .personal {
+      position: absolute;
+      width: 379px;
+      height: 68px;
+      left: 600px;
+      top: 103px;
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 45px;
+      line-height: 68px;
+      /* identical to box height */
+      color: #585858;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="pd" align="center">
+    <form netlify>
+      <br><br><br><br><br><br><br><br><br><br>
+      <input type="text" name="aadhar" id="aadhar" placeholder="Aadhar/Application Id" required> <br><br>
+
+      <input type="text" placeholder="Father’s/Guardian’s Name" required><br><br>
+
+      <input type="date" placeholder="Date Of Birth" required><br><br>
+
+      <input type="email" name="email" id="email" placeholder="E-mail ID" required><br><br>
+
+      <input type="text" placeholder="Candidate’s name" required><br><br>
+
+      <input type="text" placeholder="Mother’s Name" required><br><br>
+
+      <input type="text" id="no" name="no" placeholder="Mobile No." required><br><br>
+
+      <input type="text" placeholder="Current Address" required><br><br>
+      <!-- <button id="btn" type="submit" align="center"><a href="document.html" id="a">Next</a></button> -->
+      <a type="submit" align="center" class="button" >Next</a>
+    </form>
+  </div>
+  <script>
+    function checkAadhar() {
+      const aadhar = document.getElementById("aadhar");
+      let flag = false;
+      console.log(aadhar.value.length);
+      if (aadhar.value.length != 12) {
+        console.log("inside");
+        flag = true;
+      } else {
+        flag = false;
+
+      }
+      return flag;
+    }
+    function check() {
+      const input = document.querySelectorAll("input");
+      let flag = false;
+      input.forEach(e => {
+        if (e.value === "") {
+          flag = true;
+        } else {
+          flag = false;
+
+        }
+      });
+
+      return flag;
+    }
+    function validateMobileNo(no) {
+      let flag = false;
+      let mobilepattern = /((\+*)((0[ -]*)*|((91*)))((\d{12})+|(\d{10})+))|\d{5}([- ]*)\d{6}/;
+      if (!mobilepattern.test(no)) {
+        flag = true;
+      } else {
+        flag = false;
+      }
+      return flag;
+    }
+    function validateEmail(email){
+        let emailpattern = /\S+@\S+\.\S+/;
+        if(!emailpattern.test(String(email).toLowerCase())){
+          alert("wrong email")
+        }
+      }
+    const button = document.querySelector(".button");
+
+    button.addEventListener("click", () => {
+      const no = document.getElementById("no");
+      const email = document.getElementById("email");
+      let checkErrors = false;
+      console.log(check(), "ye check hai");
+      console.log(validateMobileNo(), "mobile no")
+      console.log(checkErrors);
+      if (checkAadhar()) {
+        checkErrors = true;
+        alert("enter valid aadhar number")
+      }
+      if (check()) {
+        checkErrors = true;
+        alert("enter all values");
+      }
+      if (validateMobileNo(no.value)) {
+        checkErrors = true;
+        alert("enter valid mobile number")
+      }
+      console.log(checkErrors);
+      if(!checkErrors){
+        console.log("andar hai ye statement ke");
+        window.location.href = "./document.html"
+      }
+      if(validateEmail(email.value)){
+        checkErrors = true;
+        alert("enter validate email")
+      }
+    })
+
+
+
+  </script>
+</body>
+
+</html>
